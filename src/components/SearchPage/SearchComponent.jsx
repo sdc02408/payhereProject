@@ -24,15 +24,17 @@ function SearchComponent() {
     }
 
     const searchRepositoryApi = async () => {
-        const token = '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'; 
+        const token = ''; 
         const config = {
             headers : {
                 Authorization: `Bearer ${token}`
             }
         };
+        console.log('1')
     
         try{
             const response = await axios.get(`https://api.github.com/search/repositories?q=${searchRepo}`, config);
+            console.log(response,'rr')
             setRepoList(response)
         } catch(error) {
             console.log(error)
